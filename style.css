@@ -1,0 +1,81 @@
+﻿body {
+}
+
+.game {
+    width: 100%; /*adjust with screen size*/
+    height: 540px;
+    border: 2px solid black;
+    margin: auto;
+    overflow: hidden; /*makes sure background doesn't show through edges*/
+}
+.background {
+    width: 3000px;
+    height: 540px;
+    margin: auto;
+    position: relative;
+    /*top: -366px; /*prevents bg from moving down*/
+    background-image: url("bg1front.png");
+    background-size: cover;
+} 
+
+#thunder {
+    width: 570px;
+    height: 284px;
+    margin: auto;
+    margin-right: 40px; /*character moves with screen*/
+    position: relative; 
+    top: 160px;
+    background-image: url("runcycle.gif");
+    background-size: cover; /*adjusts to fit in div*/
+    overflow: auto;
+}
+
+#rock {
+    width: 162px;
+    height: 81.75px;
+    margin: auto;
+    position: relative; 
+    top: 74px;
+    right: -120px;
+    background-image: url("rock.png");
+    background-size: cover;
+    animation: rock 2s linear infinite; /*linear: makes animation more constant by removing the default ease in and out*/
+}
+
+@keyframes rock { /*defines animation*/
+    0%{
+        right: 1000px; /*0% = start of animation 100% = end of animation*/
+    }
+    100% {
+        right: -1000px;
+    }
+}
+
+.jumpanimation {
+    animation: jumpanimation 1s linear;
+}
+
+@keyframes jumpanimation {
+    0% {
+        top: 80px;
+    }
+
+    20%{
+        top: -10px;
+    }
+
+    50% {
+        top: -20px;
+        transition-timing-function: ease-in-out;
+    }
+
+    80% {
+        top: -10px;
+        transition-timing-function: ease-in-out;
+    }
+
+    100% {
+        top: 80px;
+    }
+}
+
